@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1>Have a puppy that needs us?</h1>
+  <p>Add them here!</p>
+  {% for mess in get_flashed_messages() %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="fade close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{mess}}
+  </div>
+  {% endfor %}
+  <form  method="POST">
+    <div class="form-group">
+      {{form.hidden_tag()}}
+      {{form.name.label}}{{form.name()}}
+      {{form.owner.label}}{{form.owner}}
+      {{form.submit()}}
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

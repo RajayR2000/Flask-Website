@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+{% block content%}
+<div class="jumbotron">
+
+  {% if puppies %}
+  <ul>
+    <h1>Here are our puppies:</h1>
+    {% for pup in puppies %}
+    <li>{{pup}}</li>
+    {% endfor %}
+
+  </ul>
+  {% else %}
+    #<h1>Sorry,we don't have any puppies in our database now.</h1>
+
+  {% endif %}
+
+</div>
+
+{% endblock %}
